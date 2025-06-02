@@ -1,4 +1,4 @@
-# Portfolio Tayse Rosa
+# Portfólio Tayse Rosa
 
 Link do projeto em funcionamento:
 
