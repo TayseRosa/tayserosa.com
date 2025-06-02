@@ -33,4 +33,4 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
   </tr>
 </table>
 
-Copyright :copyright: 2023 · Feito com por ❤️ Tayse Rosa · JS Drums
+Copyright :copyright: 2023 · Feito com por ❤️ Tayse Rosa
