@@ -683,9 +683,6 @@ h6,
 /*** Footer End ***/
 
 @media (max-width: 600px) {
-  body{
-    overflow: hidden;
-  }
   
     .display-6{
     font-size: 30px;
