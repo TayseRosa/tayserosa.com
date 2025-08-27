@@ -686,16 +686,6 @@ h6,
   body{
     overflow: hidden;
   }
-
-  /* Para navegadores baseados em WebKit (Chrome, Safari, iOS, Android) */
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* Para Firefox */
-html {
-  scrollbar-width: none;
-}
   
     .display-6{
     font-size: 30px;
