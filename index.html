@@ -21,7 +21,10 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         /* Header */
@@ -31,6 +34,18 @@
             text-align: center;
             padding: 3rem 1rem;
             border-radius: 0 0 25px 25px;
+            background-image: url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true');
+            background-size: cover;
+
+
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 0 0 25px 25px;
+
         }
 
         .header-section h1 {
@@ -52,6 +67,9 @@
             border-radius: 50px;
             font-weight: 600;
             transition: 0.3s;
+            background-color: #ff5722;
+            border: none;
+            color: #fff ;
         }
 
         .btn-social:hover {
@@ -95,9 +113,7 @@
             scroll-behavior: smooth;
             gap: 1rem;
             justify-content: start;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding: 1rem;
         }
 
         .carousel-container::-webkit-scrollbar {
@@ -118,6 +134,8 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             flex-shrink: 0;
+            text-decoration: none;
+            color: inherit;
         }
 
         .product-card:hover {
@@ -155,12 +173,18 @@
             padding: 0.4rem 1.2rem;
             font-weight: 600;
             text-decoration: none;
+            display: inline-block;
             transition: 0.3s;
         }
 
         .btn-buy:hover {
             background-color: #e64a19;
             color: #fff;
+            
+        }
+
+        h5:hover{
+            color:#ff5722;
         }
 
         footer {
@@ -185,6 +209,7 @@
 <body>
     <!-- Header / Intro -->
     <section class="header-section">
+        
         <h1>🎉 Achadinhos Shopee VIP 🏅 | Orange Store</h1>
         <p>💡 Fique atento aos achadinhos do dia e garanta os melhores preços!</p>
         <a href="https://chat.whatsapp.com/FfB11jIt0As4lGGmLhj1nq" target="_blank" class="btn btn-light btn-social"><i class="fab fa-whatsapp"></i> Grupo VIP</a>
@@ -197,168 +222,51 @@
         <div class="category-wrapper">
             <h2 class="category-title">Cozinha</h2>
             <div class="carousel-container">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
+                <a href="https://s.shopee.com.br/4LAHeH7kY9" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mckqspvhxla944@resize_w450_nl.webp" alt="Máquina de Café Expresso Portátil 3 em 1" class="product-img">
                     <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
+                        <h5>Máquina de Café Expresso Portátil 3 em 1</h5>
+                        <p>Elétrica, 20 Bar de pressão. Aquecimento rápido em 4-6 minutos. Compatível com cápsulas ☕</p>
+                        <p><strong>De:</strong> R$ 349,90 <br> <strong>Por:</strong> R$ 329,90</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
                     </div>
-                </div>
+                </a>
 
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
+                <a href="https://s.shopee.com.br/4AqrRy8Nt8" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lxroi10e9cpe7f.webp" alt="Porta Pão Clean" class="product-img">
                     <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
+                        <h5>Porta Pão Clean – Boleira – Porta Queijo</h5>
+                        <p>Prático, moderno e versátil. Opções: Porta Pão, Bolo ou Queijo. Vários tamanhos disponíveis</p>
+                        <p><strong>De:</strong> R$ 68,00 <br> <strong>Por:</strong> A partir de R$ 43,00</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
                     </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Cozinha+Produto+1" alt="Produto Cozinha 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Cozinha 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_COZINHA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-                <!-- Adicione mais produtos -->
+                </a>
             </div>
         </div>
 
-        <!-- Categoria Quarto Casal -->
+        <!-- Categoria Sala -->
         <div class="category-wrapper">
-            <h2 class="category-title">Quarto Casal</h2>
+            <h2 class="category-title">Sala</h2>
             <div class="carousel-container">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
+                <a href="https://s.shopee.com.br/4VThqa77DA" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lrn7seggceuzc0.webp" alt="Manta Xale Para Sofá ou Poltrona" class="product-img">
                     <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
+                        <h5>Manta Xale Para Sofá ou Poltrona</h5>
+                        <p>Artesanal Favo de Mel, Tamanho: 2,0 x 1,2m. Várias cores disponíveis 🌈</p>
+                        <p><strong>De:</strong> R$ 78,90 <br> <strong>Por:</strong> R$ 56,97</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
                     </div>
-                </div>
+                </a>
 
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
+                <a href="https://s.shopee.com.br/40XRFf91E7" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134201-7r98o-ltchn2gi284x58.webp" alt="Kit 10 Placas 3D para Parede" class="product-img">
                     <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
+                        <h5>Kit com 10 Placas 3D para Parede – Painel Ripado 50x50cm</h5>
+                        <p>Fácil de aplicar, super moderno. Disponível em várias cores: branca, preta, cinza e branco gelo 🎨</p>
+                        <p><strong>De:</strong> R$ 95,00 <br> <strong>Por:</strong> R$ 69,00</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
                     </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Casal+Produto+1" alt="Produto Quarto Casal 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Casal 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CASAL_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Categoria Quarto Criança -->
-        <div class="category-wrapper">
-            <h2 class="category-title">Quarto Criança</h2>
-            <div class="carousel-container">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Quarto+Criança+Produto+1" alt="Produto Quarto Criança 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Quarto Criança 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_QUARTO_CRIANCA_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Categoria Banheiro -->
-        <div class="category-wrapper">
-            <h2 class="category-title">Banheiro</h2>
-            <div class="carousel-container">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x220.png?text=Banheiro+Produto+1" alt="Produto Banheiro 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Produto Banheiro 1</h5>
-                        <p>Descrição curta do produto ou destaque da oferta.</p>
-                        <a href="SEU_LINK_AFILIADO_BANHEIRO_1" target="_blank" class="btn-buy">Comprar na Shopee</a>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -367,7 +275,6 @@
     <footer>
         <p>&copy; 2025 Achadinhos Shopee VIP | Orange Store. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 
 </html>
