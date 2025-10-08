@@ -1,0 +1,328 @@
+/* ========================= */
+/* VARIÁVEIS E RESET */
+/* ========================= */
+:root {
+  --bg: #0a0a0a;
+  --dark: #111;
+  --text: #fff;
+  --gray: #aaa;
+  --orange: #ff6600;
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.header .nav a {
+  margin: 0 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.header .nav a:hover {
+  color: var(--orange);
+}
+
+.btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #ff8533;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+  height: 100vh; /* ocupa toda a tela */
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: url("img/dobra1/bg.png") no-repeat center/cover;
+  padding-top: 100px; /* espaço para o menu fixo */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px; /* limita a largura do texto */
+}
+.hero-text span {
+  color: var(--orange);
+}
+.hero-text p {
+  margin-bottom: 20px;
+  color: var(--gray);
+}
+
+.call-img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.estrutura-completa .title{
+    font-weight: 700;
+    margin: 20px 0 10px 0; 
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-img img {
+  width: 100%;
+  max-width: 500px; /* limita o tamanho da imagem */
+  border-radius: var(--radius);
+}
+
+
+/* ========================= */
+/* DOBRA 2 */
+/* ========================= */
+
+.dobra {
+  padding: 100px 0;
+  background: #020101;
+}
+
+.dobra2-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.dobra2-img {
+  flex: 1;
+}
+.dobra2-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.dobra2-text {
+  flex: 1;
+}
+.dobra2-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.dobra2-text span {
+  color: var(--orange);
+}
+.dobra2-text p {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+.dobra2-text .btn {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .dobra2-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dobra2-text {
+    max-width: 600px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================= */
+/* BENEFÍCIOS */
+/* ========================= */
+.benefits {
+  padding: 80px 0;
+  text-align: center;
+}
+.benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.benefits span {
+  color: var(--orange);
+}
+.benefits .cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: var(--radius);
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ========================= */
+/* SERVIÇOS */
+/* ========================= */
+.services {
+  padding: 80px 0;
+  background: #0f0f0f;
+}
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.services span {
+  color: var(--orange);
+}
+.services .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.item {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+/* ========================= */
+/* CLIENTES / DEPOIMENTOS */
+/* ========================= */
+.clientes {
+  padding: 80px 0;
+  text-align: center;
+}
+.depoimentos {
+  display: flex;
+  gap: 20px;
+  margin: 40px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.depo {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: var(--radius);
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ========================= */
+/* CALL TO ACTION */
+/* ========================= */
+.cta {
+  padding: 80px 0;
+  background: #1a1a1a;
+  text-align: center;
+}
+.cta span {
+  color: var(--orange);
+}
+.cta .btn {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* ========================= */
+/* FAQ */
+/* ========================= */
+.faq {
+  padding: 80px 0;
+  text-align: center;
+}
+.faq-list {
+  margin: 40px 0;
+}
+.faq-item {
+  background: #1a1a1a;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: var(--radius);
+  text-align: left;
+}
+.faq-item h3 {
+  margin-bottom: 10px;
+  color: var(--orange);
+}
+.whatsapp {
+  background: #25d366;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+.footer {
+  padding: 20px;
+  background: #000;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--gray);
+}

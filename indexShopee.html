@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Achadinhos Shopee VIP | Orange Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Shopee, Achadinhos, Ofertas, Afiliada, Orange Store">
+    <meta name="description" content="Descubra os melhores achadinhos na Shopee e aproveite ofertas exclusivas através dos links de afiliada.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        .header-section {
+            background: linear-gradient(90deg, #ff7f50, #ff5722);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-radius: 0 0 25px 25px;
+            background-image: url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true');
+            background-size: cover;
+
+
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 0 0 25px 25px;
+
+        }
+
+        .header-section h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .btn-social {
+            margin: 0.3rem;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            background-color: #ff5722;
+            border: none;
+            color: #fff ;
+        }
+
+        .btn-social:hover {
+            transform: scale(1.05);
+        }
+
+        /* Category Title */
+        .category-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .category-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            color: #ff5722;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 4px;
+            background-color: #ff7f50;
+            transition: width 0.3s;
+            border-radius: 2px;
+            margin: 5px auto 0 auto;
+        }
+
+        .category-title:hover::after {
+            width: 50%;
+        }
+
+        /* Products Carousel */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1rem;
+            justify-content: start;
+            padding: 1rem;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background-color: #ff5722;
+            border-radius: 4px;
+        }
+
+        .product-card {
+            min-width: 220px;
+            max-width: 250px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex-shrink: 0;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-body {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-body h5 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-body p {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .btn-buy {
+            background-color: #ff5722;
+            color: #fff;
+            border-radius: 50px;
+            padding: 0.4rem 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-buy:hover {
+            background-color: #e64a19;
+            color: #fff;
+            
+        }
+
+        h5:hover{
+            color:#ff5722;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .product-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header / Intro -->
+    <section class="header-section">
+        
+        <h1>🎉 Achadinhos Shopee VIP 🏅 | Orange Store</h1>
+        <p>💡 Fique atento aos achadinhos do dia e garanta os melhores preços!</p>
+        <a href="https://chat.whatsapp.com/FfB11jIt0As4lGGmLhj1nq" target="_blank" class="btn btn-light btn-social"><i class="fab fa-whatsapp"></i> Grupo VIP</a>
+        <a href="https://www.instagram.com/orangestore.shop" target="_blank" class="btn btn-light btn-social"><i class="fab fa-instagram"></i> Instagram</a>
+    </section>
+
+    <div class="products-container">
+<!-- Categoria Casa e Organização -->
+<div class="category-wrapper">
+    <h2 class="category-title">Casa e Organização</h2>
+    <div class="carousel-container">
+        <a href="https://s.shopee.com.br/8zwCVwFJVk" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m93s82m8nkftd4.webp" alt="Kit 20 Placas Adesivas Vinílico Mármore" class="product-img">
+            <div class="product-body">
+                <h5>Kit 20 Placas Adesivas Vinílico Mármore</h5>
+                <p>Transforme sua parede com estilo e facilidade 🏠</p>
+                <p><strong>De:</strong> R$ 49,98 <br> <strong>Por:</strong> R$ 29,99</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+         <a href="https://s.shopee.com.br/4LAHeH7kY9" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mckqspvhxla944@resize_w450_nl.webp" alt="Máquina de Café Expresso Portátil 3 em 1" class="product-img">
+                    <div class="product-body">
+                        <h5>Máquina de Café Expresso Portátil 3 em 1</h5>
+                        <p>Elétrica, 20 Bar de pressão. Aquecimento rápido em 4-6 minutos. Compatível com cápsulas ☕</p>
+                        <p><strong>De:</strong> R$ 349,90 <br> <strong>Por:</strong> R$ 329,90</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
+                    </div>
+                </a>
+
+                <a href="https://s.shopee.com.br/4AqrRy8Nt8" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lxroi10e9cpe7f.webp" alt="Porta Pão Clean" class="product-img">
+                    <div class="product-body">
+                        <h5>Porta Pão Clean – Boleira – Porta Queijo</h5>
+                        <p>Prático, moderno e versátil. Opções: Porta Pão, Bolo ou Queijo. Vários tamanhos disponíveis</p>
+                        <p><strong>De:</strong> R$ 68,00 <br> <strong>Por:</strong> A partir de R$ 43,00</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
+                    </div>
+                </a>
+
+        <a href="https://s.shopee.com.br/6prhvtlAzy" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcwkwagwl3ci13.webp" alt="Lixeira Automática com Sensor" class="product-img">
+            <div class="product-body">
+                <h5>Lixeira Automática com Sensor Inteligente</h5>
+                <p>Mais praticidade e higiene no seu dia a dia ✨</p>
+                <p><strong>De:</strong> R$ 99,86 <br> <strong>Por:</strong> R$ 71,90</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+<a href="https://s.shopee.com.br/4VThqa77DA" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lrn7seggceuzc0.webp" alt="Manta Xale Para Sofá ou Poltrona" class="product-img">
+                    <div class="product-body">
+                        <h5>Manta Xale Para Sofá ou Poltrona</h5>
+                        <p>Artesanal Favo de Mel, Tamanho: 2,0 x 1,2m. Várias cores disponíveis 🌈</p>
+                        <p><strong>De:</strong> R$ 78,90 <br> <strong>Por:</strong> R$ 56,97</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
+                    </div>
+                </a>
+
+                <a href="https://s.shopee.com.br/40XRFf91E7" target="_blank" class="product-card">
+                    <img src="https://down-br.img.susercontent.com/file/br-11134201-7r98o-ltchn2gi284x58.webp" alt="Kit 10 Placas 3D para Parede" class="product-img">
+                    <div class="product-body">
+                        <h5>Kit com 10 Placas 3D para Parede – Painel Ripado 50x50cm</h5>
+                        <p>Fácil de aplicar, super moderno. Disponível em várias cores: branca, preta, cinza e branco gelo 🎨</p>
+                        <p><strong>De:</strong> R$ 95,00 <br> <strong>Por:</strong> R$ 69,00</p>
+                        <div class="btn-buy">Comprar na Shopee</div>
+                    </div>
+                </a>
+
+        <a href="https://s.shopee.com.br/7KnyWf4uYJ" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rdxj-mdg9i15hkhksa9.webp" alt="Suporte Organizador de Prateleira para Xícaras" class="product-img">
+            <div class="product-body">
+                <h5>Suporte Organizador de Prateleira – 6 Ganchos</h5>
+                <p>Mantenha sua cozinha organizada e prática ✨☕</p>
+                <p><strong>De:</strong> R$ 25,18 <br> <strong>Por:</strong> R$ 12,34</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/8KgViRtW5c" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-23020-oke3wprsmxnv9f.webp" alt="Pote Porta-Mantimentos" class="product-img">
+            <div class="product-body">
+                <h5>Pote Porta-Mantimentos – Tampa de Madeira</h5>
+                <p>Estilo e funcionalidade para café, açúcar, sal e condimentos 💖</p>
+                <p><strong>De:</strong> R$ 59,80 <br> <strong>Por:</strong> R$ 29,90</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/4VTn94u7bZ" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6dwy6oqra5s4d.webp" alt="Conjunto de Panelas 8 Peças Antiaderente" class="product-img">
+            <div class="product-body">
+                <h5>Conjunto de Panelas 8 Peças Antiaderente</h5>
+                <p>Garanta seu kit completo com preço imperdível 🍳</p>
+                <p><strong>De:</strong> R$ 220,00 <br> <strong>Por:</strong> R$ 121,00</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/3fudCV63XN" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lopkw8b2mrw2e3.webp" alt="Armário Gabinete Classic de Banheiro" class="product-img">
+            <div class="product-body">
+                <h5>Armário Gabinete Classic de Banheiro</h5>
+                <p>Pia de coluna, disponível em várias cores 🚨</p>
+                <p><strong>De:</strong> R$ 170,72 <br> <strong>Por:</strong> R$ 139,99</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/5ffhaZAg34" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m12w9z6f7ggu77.webp" alt="Kit 10 Panos de Prato e Copa" class="product-img">
+            <div class="product-body">
+                <h5>Kit 10 Panos de Prato e Copa 100% Algodão</h5>
+                <p>Guardanapos sem estampa, preço especial 😱🔥</p>
+                <p><strong>De:</strong> R$ 39,89 <br> <strong>Por:</strong> R$ 28,72</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Categoria Moda e Acessórios -->
+<div class="category-wrapper">
+    <h2 class="category-title">Moda e Acessórios</h2>
+    <div class="carousel-container">
+        <a href="https://s.shopee.com.br/60IaxgPxJ7" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7ravm-ma4nx2so51vo92.webp" alt="Bolsa Feminina Transversal" class="product-img">
+            <div class="product-body">
+                <h5>Bolsa Feminina Transversal</h5>
+                <p>Espaçosa, versátil e perfeita para o dia a dia! 💎</p>
+                <p><strong>De:</strong> R$ 121,18 <br> <strong>Por:</strong> R$ 39,99</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/2g28zVzr7O" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lzkw1ozr2mxhb8.webp" alt="Calça Jeans Skinny Levanta Bumbum" class="product-img">
+            <div class="product-body">
+                <h5>Calça Jeans Skinny Levanta Bumbum</h5>
+                <p>Diversas cores para combinar com seu estilo 🌟</p>
+                <p><strong>De:</strong> R$ 72,29 <br> <strong>Por:</strong> R$ 60,00</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/2ViinC0xml" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m35ck2uzvtw3de.webp" alt="Kit Biquíni Cortininha + Saída de Praia" class="product-img">
+            <div class="product-body">
+                <h5>Kit Biquíni Cortininha + Saída de Praia</h5>
+                <p>Bojo removível, charme e conforto na praia ou piscina 🌊</p>
+                <p><strong>De:</strong> R$ 89,40 <br> <strong>Por:</strong> R$ 59,90</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/5pzAlIobpZ" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7qukw-lfxa7no8wvsu41.webp" alt="Tênis Feminino Casual" class="product-img">
+            <div class="product-body">
+                <h5>Tênis Feminino Casual</h5>
+                <p>Ande com mais leveza e elegância no dia a dia ✨</p>
+                <p><strong>De:</strong> R$ 63,97 <br> <strong>Por:</strong> R$ 49,90</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+        <!-- Categoria Cabelo e Beleza -->
+<div class="category-wrapper">
+    <h2 class="category-title">Cabelo e Beleza</h2>
+    <div class="carousel-container">
+        <a href="https://s.shopee.com.br/60IayZhPAb" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rbnb-lnyfxrzhs0tt29.webp" alt="Modelador Profissional de Cabelo" class="product-img">
+            <div class="product-body">
+                <h5>Modelador Profissional de Cabelo</h5>
+                <p>Não perca essa chance de arrasar em qualquer ocasião! 💁‍♀️</p>
+                <p><strong>De:</strong> R$ 167,62 <br> <strong>Por:</strong> R$ 56,99</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/LeEDP8h9O" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7qvdd-lilyod2cwtfbc6@resize_w450_nl.webp" alt="Protetor Solar Facial Anasol" class="product-img">
+            <div class="product-body">
+                <h5>Protetor Solar Facial Anasol</h5>
+                <p>Fórmula vegana, ação clareadora. Disponível em tons médio e claro. 🌿</p>
+                <p><strong>De:</strong> R$ 77,38 <br> <strong>Por:</strong> R$ 61,13</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/2B5sNGM9lT" target="_blank" class="product-card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-22110-1w82hxud1rjv13.webp" alt="Kit Lola Cosmétics Reconstrução" class="product-img">
+            <div class="product-body">
+                <h5>Kit Lola Cosmétics Reconstrução – 5 Itens</h5>
+                <p>Cuidados completos com super desconto 💇‍♀️✨</p>
+                <p><strong>De:</strong> R$ 258,63 <br> <strong>Por:</strong> R$ 131,90</p>
+                <div class="btn-buy">Comprar na Shopee</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Achadinhos Shopee VIP | Orange Store. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

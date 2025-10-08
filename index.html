@@ -1,429 +1,354 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <title>Achadinhos Shopee VIP | Orange Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Shopee, Achadinhos, Ofertas, Afiliada, Orange Store">
-    <meta name="description" content="Descubra os melhores achadinhos na Shopee e aproveite ofertas exclusivas através dos links de afiliada.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>@achadinhos.orangestore — Categorias</title>
+<style>
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --accent: #ff7a59;
+}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+* { box-sizing: border-box; scroll-behavior: smooth; }
 
-    <!-- Bootstrap & Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #081024 0%, #071026 50%, #06101a 100%);
+  color: #e6eef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+header {
+  text-align: center;
+  margin: 60px 20px 40px;
+}
 
-        /* Header */
-        .header-section {
-            background: linear-gradient(90deg, #ff7f50, #ff5722);
-            color: #fff;
-            text-align: center;
-            padding: 3rem 1rem;
-            border-radius: 0 0 25px 25px;
-            background-image: url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true');
-            background-size: cover;
+header .avatar {
+  width: 86px; height: 86px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffd6c2, #ff9b7d);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; color: #2a0b00; font-size: 26px;
+  margin: 0 auto 16px;
+}
 
+header h1 { margin: 0; font-size: 20px; }
+header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
 
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                url('https://github.com/TayseRosa/tayserosa.com/blob/main/bkg.png?raw=true') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 3rem 1rem;
-    border-radius: 0 0 25px 25px;
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 60px;
+  width: 90%;
+  max-width: 400px;
+}
 
-        }
+.cat-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff7a59, #ff5c2e);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 
-        .header-section h1 {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+.cat-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,122,89,0.4);
+}
 
-        .header-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-        }
+section {
+  width: 100%;
+  max-width: 960px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 80px;
+}
 
-        .btn-social {
-            margin: 0.3rem;
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.3s;
-            background-color: #ff5722;
-            border: none;
-            color: #fff ;
-        }
+section h2 {
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 24px;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
 
-        .btn-social:hover {
-            transform: scale(1.05);
-        }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-        /* Category Title */
-        .category-wrapper {
-            text-align: center;
-            margin-top: 2rem;
-        }
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
 
-        .category-title {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 1.8rem;
-            color: #ff5722;
-            display: inline-block;
-            position: relative;
-            margin-bottom: 1rem;
-        }
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
 
-        .category-title::after {
-            content: '';
-            display: block;
-            width: 0%;
-            height: 4px;
-            background-color: #ff7f50;
-            transition: width 0.3s;
-            border-radius: 2px;
-            margin: 5px auto 0 auto;
-        }
+.carousel::-webkit-scrollbar { display: none; }
 
-        .category-title:hover::after {
-            width: 50%;
-        }
+.card {
+  flex: 0 0 calc(25% - 12px);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.25s ease;
+}
 
-        /* Products Carousel */
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            gap: 1rem;
-            justify-content: start;
-            padding: 1rem;
-        }
+.card:hover { transform: scale(1.03); }
 
-        .carousel-container::-webkit-scrollbar {
-            height: 8px;
-        }
+.card .thumb {
+  width: 100%; height: 140px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #081226;
+}
 
-        .carousel-container::-webkit-scrollbar-thumb {
-            background-color: #ff5722;
-            border-radius: 4px;
-        }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
 
-        .product-card {
-            min-width: 220px;
-            max-width: 250px;
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            flex-shrink: 0;
-            text-decoration: none;
-            color: inherit;
-        }
+.card .info h3 { margin: 0; font-size: 14px; }
+.card .info p { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
+.card .actions {
+  display: flex; gap: 6px; margin-top: 8px;
+}
 
-        .product-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+.btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,122,89,0.3);
+  background: #071028;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+  display: flex; align-items: center; gap: 6px;
+  text-decoration: none;
+}
 
-        .product-body {
-            padding: 1rem;
-            text-align: center;
-        }
+.btn:hover { background: #ff7a59; color: #fff; }
 
-        .product-body h5 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15,23,36,0.8);
+  border: none;
+  color: #ff7a59;
+  font-size: 24px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
 
-        .product-body p {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            color: #555;
-        }
+.arrow:hover { background: #ff7a59; color: #fff; }
 
-        .btn-buy {
-            background-color: #ff5722;
-            color: #fff;
-            border-radius: 50px;
-            padding: 0.4rem 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
+.arrow-left { left: -20px; }
+.arrow-right { right: -20px; }
 
-        .btn-buy:hover {
-            background-color: #e64a19;
-            color: #fff;
-            
-        }
+#backTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff7a59;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px; height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,122,89,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
 
-        h5:hover{
-            color:#ff5722;
-        }
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15,23,36,0.95);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.toast.show { opacity: 1; }
 
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
+@media (max-width: 780px) {
+  .card { flex: 0 0 calc(50% - 12px); }
+  .arrow-left { left: 0; }
+  .arrow-right { right: 0; }
+}
 
-        @media (max-width: 768px) {
-            .header-section h1 {
-                font-size: 2rem;
-            }
-
-            .product-img {
-                height: 150px;
-            }
-        }
-    </style>
+@media (max-width: 480px) {
+  .card { flex: 0 0 calc(70% - 12px); }
+}
+</style>
 </head>
-
 <body>
-    <!-- Header / Intro -->
-    <section class="header-section">
+
+<header>
+  <div class="avatar">OS</div>
+  <h1>@achadinhos.orangestore — Achadinhos Shopee VIP 🏅</h1>
+  <p>💥 Ofertas exclusivas todo dia • 🏠 Melhores achados da Shopee!</p>
+</header>
+
+<div class="categories">
+  <button class="cat-btn" onclick="scrollToSection('criancas')">🎈 Dia das Crianças</button>
+  <button class="cat-btn" onclick="scrollToSection('natal')">🎄 Natal</button>
+  <button class="cat-btn" onclick="scrollToSection('casa')">🏠 Casa & Decoração</button>
+  <button class="cat-btn" onclick="scrollToSection('beleza')">💅 Beleza</button>
+</div>
+
+<section id="criancas">
+  <h2>🎈 Dia das Crianças</h2>
+  <div class="carousel-container">
+    <button class="arrow arrow-left" onclick="scrollCarousel('grid-criancas', -1)">&#8592;</button>
+    <div class="carousel" id="grid-criancas"></div>
+    <button class="arrow arrow-right" onclick="scrollCarousel('grid-criancas', 1)">&#8594;</button>
+  </div>
+</section>
+
+<section id="natal">
+  <h2>🎄 Natal</h2>
+  <div class="carousel-container">
+    <button class="arrow arrow-left" onclick="scrollCarousel('grid-natal', -1)">&#8592;</button>
+    <div class="carousel" id="grid-natal"></div>
+    <button class="arrow arrow-right" onclick="scrollCarousel('grid-natal', 1)">&#8594;</button>
+  </div>
+</section>
+
+<section id="casa">
+  <h2>🏠 Casa & Decoração</h2>
+  <div class="carousel-container">
+    <button class="arrow arrow-left" onclick="scrollCarousel('grid-casa', -1)">&#8592;</button>
+    <div class="carousel" id="grid-casa"></div>
+    <button class="arrow arrow-right" onclick="scrollCarousel('grid-casa', 1)">&#8594;</button>
+  </div>
+</section>
+
+<section id="beleza">
+  <h2>💅 Beleza</h2>
+  <div class="carousel-container">
+    <button class="arrow arrow-left" onclick="scrollCarousel('grid-beleza', -1)">&#8592;</button>
+    <div class="carousel" id="grid-beleza"></div>
+    <button class="arrow arrow-right" onclick="scrollCarousel('grid-beleza', 1)">&#8594;</button>
+  </div>
+</section>
+
+<button id="backTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+<script>
+const LINKS = {
+  criancas: [
+    { title:'Toca Barraca Infantil 5 em 1', subtitle:'Diversão sem fim', url:'https://s.shopee.com.br/4AqyGWT1HO', img:'https://via.placeholder.com/250x140?text=Toca+Barraca' },
+    { title:'Brinquedos de Blocos Magnéticos', subtitle:'Construa mundos incríveis', url:'https://s.shopee.com.br/9zolDHo0BF', img:'https://via.placeholder.com/250x140?text=Blocos' },
+    { title:'Bicicletas Infantil', subtitle:'Diversão e segurança', url:'https://s.shopee.com.br/7pkGdNCIln', img:'https://via.placeholder.com/250x140?text=Bicicleta' },
+    { title:'Triciclo Totoka Motoca', subtitle:'Diversão em duas rodas', url:'https://s.shopee.com.br/AKRbc0fZfp', img:'https://via.placeholder.com/250x140?text=Triciclo' },
+    { title:'Microfone de Karaokê Infantil Bluetooth', subtitle:'Diversão musical', url:'https://s.shopee.com.br/7AUjeeXGYp', img:'https://via.placeholder.com/250x140?text=Microfone' }
+  ],
+  natal: [
+    { title:'Cascata de Pisca-Pisca Bola de Natal', subtitle:'3m, 100 LEDs', url:'https://s.shopee.com.br/6fYTD05HpH', img:'https://via.placeholder.com/250x140?text=Pisca-Pisca' },
+    { title:'Boneco Papai Noel Musical', subtitle:'Sobe e desce', url:'https://s.shopee.com.br/qagG5WLCB', img:'https://via.placeholder.com/250x140?text=Papai+Noel' },
+    { title:'Luminária LED 3D Criativa', subtitle:'Mesa decorativa', url:'https://s.shopee.com.br/9Usea5FOq2', img:'https://via.placeholder.com/250x140?text=Luminaria' },
+    { title:'Corda LED', subtitle:'Decoração Natalina', url:'https://s.shopee.com.br/8zwNzNKmZQ', img:'https://via.placeholder.com/250x140?text=CordaLED' }
+  ],
+  casa: [
+    { title:'Varal Retrátil Parede 30m', subtitle:'Mais reforçado e prático', url:'https://s.shopee.com.br/2B5tsQY0Ok', img:'https://via.placeholder.com/250x140?text=Varal' },
+    { title:'Cozinha Compacta Madesa Diamante', subtitle:'Armário, balcão e tampo', url:'https://s.shopee.com.br/20mTgAKEGT', img:'https://via.placeholder.com/250x140?text=Cozinha' },
+    { title:'Personal Blender Mondial 300W', subtitle:'Prepare sucos e shakes', url:'https://s.shopee.com.br/2VikHBxpYz', img:'https://via.placeholder.com/250x140?text=Blender' },
+    { title:'Kit Bowls Electrolux', subtitle:'Organização na cozinha', url:'https://s.shopee.com.br/AKRbbo6ksr', img:'https://via.placeholder.com/250x140?text=Bowls' }
+  ],
+  beleza: [
+    { title:'Escova Secadora Britânia 4 em 1', subtitle:'Cabelo bonito e seco rápido', url:'https://s.shopee.com.br/BKpUxEIiM', img:'https://via.placeholder.com/250x140?text=Escova' },
+    { title:'Modelador Profissional de Cabelo', subtitle:'Arrase em qualquer ocasião', url:'https://s.shopee.com.br/60IayZhPAb', img:'https://via.placeholder.com/250x140?text=Modelador' },
+    { title:'Protetor Solar Facial Anasol', subtitle:'Proteção e cuidado', url:'https://s.shopee.com.br/LeEDP8h9O', img:'https://via.placeholder.com/250x140?text=Protetor' },
+    { title:'Kit Lola Cosmétics 5 Itens', subtitle:'Reconstrução Danos Vorazes', url:'https://s.shopee.com.br/2B5sNGM9lT', img:'https://via.placeholder.com/250x140?text=Kit+Cosmeticos' }
+  ]
+};
+
+function createCards(sectionId, items) {
+  const container = document.getElementById(sectionId);
+  items.forEach(item=>{
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="thumb"><img src="${item.img}" alt="${item.title}"></div>
+      <div class="info">
+        <h3>${item.title}</h3>
+        <p>${item.subtitle}</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="${item.url}" target="_blank">🛒 Comprar</a>
         
-        <h1>🎉 Achadinhos Shopee VIP 🏅 | Orange Store</h1>
-        <p>💡 Fique atento aos achadinhos do dia e garanta os melhores preços!</p>
-        <a href="https://chat.whatsapp.com/FfB11jIt0As4lGGmLhj1nq" target="_blank" class="btn btn-light btn-social"><i class="fab fa-whatsapp"></i> Grupo VIP</a>
-        <a href="https://www.instagram.com/orangestore.shop" target="_blank" class="btn btn-light btn-social"><i class="fab fa-instagram"></i> Instagram</a>
-    </section>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
 
-    <div class="products-container">
-<!-- Categoria Casa e Organização -->
-<div class="category-wrapper">
-    <h2 class="category-title">Casa e Organização</h2>
-    <div class="carousel-container">
-        <a href="https://s.shopee.com.br/8zwCVwFJVk" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m93s82m8nkftd4.webp" alt="Kit 20 Placas Adesivas Vinílico Mármore" class="product-img">
-            <div class="product-body">
-                <h5>Kit 20 Placas Adesivas Vinílico Mármore</h5>
-                <p>Transforme sua parede com estilo e facilidade 🏠</p>
-                <p><strong>De:</strong> R$ 49,98 <br> <strong>Por:</strong> R$ 29,99</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
+// CORREÇÃO: Mapear corretamente os IDs de grid para o objeto LINKS
+const mapping = {
+  'grid-criancas': 'criancas',
+  'grid-natal': 'natal',
+  'grid-casa': 'casa',
+  'grid-beleza': 'beleza'
+};
 
-         <a href="https://s.shopee.com.br/4LAHeH7kY9" target="_blank" class="product-card">
-                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mckqspvhxla944@resize_w450_nl.webp" alt="Máquina de Café Expresso Portátil 3 em 1" class="product-img">
-                    <div class="product-body">
-                        <h5>Máquina de Café Expresso Portátil 3 em 1</h5>
-                        <p>Elétrica, 20 Bar de pressão. Aquecimento rápido em 4-6 minutos. Compatível com cápsulas ☕</p>
-                        <p><strong>De:</strong> R$ 349,90 <br> <strong>Por:</strong> R$ 329,90</p>
-                        <div class="btn-buy">Comprar na Shopee</div>
-                    </div>
-                </a>
+Object.keys(mapping).forEach(gridId => {
+  createCards(gridId, LINKS[mapping[gridId]]);
+});
 
-                <a href="https://s.shopee.com.br/4AqrRy8Nt8" target="_blank" class="product-card">
-                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lxroi10e9cpe7f.webp" alt="Porta Pão Clean" class="product-img">
-                    <div class="product-body">
-                        <h5>Porta Pão Clean – Boleira – Porta Queijo</h5>
-                        <p>Prático, moderno e versátil. Opções: Porta Pão, Bolo ou Queijo. Vários tamanhos disponíveis</p>
-                        <p><strong>De:</strong> R$ 68,00 <br> <strong>Por:</strong> A partir de R$ 43,00</p>
-                        <div class="btn-buy">Comprar na Shopee</div>
-                    </div>
-                </a>
+function scrollToSection(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
 
-        <a href="https://s.shopee.com.br/6prhvtlAzy" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcwkwagwl3ci13.webp" alt="Lixeira Automática com Sensor" class="product-img">
-            <div class="product-body">
-                <h5>Lixeira Automática com Sensor Inteligente</h5>
-                <p>Mais praticidade e higiene no seu dia a dia ✨</p>
-                <p><strong>De:</strong> R$ 99,86 <br> <strong>Por:</strong> R$ 71,90</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
+function scrollCarousel(id, direction) {
+  const container = document.getElementById(id);
+  const scrollAmount = container.offsetWidth * 0.8; 
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
 
-<a href="https://s.shopee.com.br/4VThqa77DA" target="_blank" class="product-card">
-                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lrn7seggceuzc0.webp" alt="Manta Xale Para Sofá ou Poltrona" class="product-img">
-                    <div class="product-body">
-                        <h5>Manta Xale Para Sofá ou Poltrona</h5>
-                        <p>Artesanal Favo de Mel, Tamanho: 2,0 x 1,2m. Várias cores disponíveis 🌈</p>
-                        <p><strong>De:</strong> R$ 78,90 <br> <strong>Por:</strong> R$ 56,97</p>
-                        <div class="btn-buy">Comprar na Shopee</div>
-                    </div>
-                </a>
-
-                <a href="https://s.shopee.com.br/40XRFf91E7" target="_blank" class="product-card">
-                    <img src="https://down-br.img.susercontent.com/file/br-11134201-7r98o-ltchn2gi284x58.webp" alt="Kit 10 Placas 3D para Parede" class="product-img">
-                    <div class="product-body">
-                        <h5>Kit com 10 Placas 3D para Parede – Painel Ripado 50x50cm</h5>
-                        <p>Fácil de aplicar, super moderno. Disponível em várias cores: branca, preta, cinza e branco gelo 🎨</p>
-                        <p><strong>De:</strong> R$ 95,00 <br> <strong>Por:</strong> R$ 69,00</p>
-                        <div class="btn-buy">Comprar na Shopee</div>
-                    </div>
-                </a>
-
-        <a href="https://s.shopee.com.br/7KnyWf4uYJ" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rdxj-mdg9i15hkhksa9.webp" alt="Suporte Organizador de Prateleira para Xícaras" class="product-img">
-            <div class="product-body">
-                <h5>Suporte Organizador de Prateleira – 6 Ganchos</h5>
-                <p>Mantenha sua cozinha organizada e prática ✨☕</p>
-                <p><strong>De:</strong> R$ 25,18 <br> <strong>Por:</strong> R$ 12,34</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/8KgViRtW5c" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-23020-oke3wprsmxnv9f.webp" alt="Pote Porta-Mantimentos" class="product-img">
-            <div class="product-body">
-                <h5>Pote Porta-Mantimentos – Tampa de Madeira</h5>
-                <p>Estilo e funcionalidade para café, açúcar, sal e condimentos 💖</p>
-                <p><strong>De:</strong> R$ 59,80 <br> <strong>Por:</strong> R$ 29,90</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/4VTn94u7bZ" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6dwy6oqra5s4d.webp" alt="Conjunto de Panelas 8 Peças Antiaderente" class="product-img">
-            <div class="product-body">
-                <h5>Conjunto de Panelas 8 Peças Antiaderente</h5>
-                <p>Garanta seu kit completo com preço imperdível 🍳</p>
-                <p><strong>De:</strong> R$ 220,00 <br> <strong>Por:</strong> R$ 121,00</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/3fudCV63XN" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lopkw8b2mrw2e3.webp" alt="Armário Gabinete Classic de Banheiro" class="product-img">
-            <div class="product-body">
-                <h5>Armário Gabinete Classic de Banheiro</h5>
-                <p>Pia de coluna, disponível em várias cores 🚨</p>
-                <p><strong>De:</strong> R$ 170,72 <br> <strong>Por:</strong> R$ 139,99</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/5ffhaZAg34" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m12w9z6f7ggu77.webp" alt="Kit 10 Panos de Prato e Copa" class="product-img">
-            <div class="product-body">
-                <h5>Kit 10 Panos de Prato e Copa 100% Algodão</h5>
-                <p>Guardanapos sem estampa, preço especial 😱🔥</p>
-                <p><strong>De:</strong> R$ 39,89 <br> <strong>Por:</strong> R$ 28,72</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-    </div>
-</div>
-
-<!-- Categoria Moda e Acessórios -->
-<div class="category-wrapper">
-    <h2 class="category-title">Moda e Acessórios</h2>
-    <div class="carousel-container">
-        <a href="https://s.shopee.com.br/60IaxgPxJ7" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7ravm-ma4nx2so51vo92.webp" alt="Bolsa Feminina Transversal" class="product-img">
-            <div class="product-body">
-                <h5>Bolsa Feminina Transversal</h5>
-                <p>Espaçosa, versátil e perfeita para o dia a dia! 💎</p>
-                <p><strong>De:</strong> R$ 121,18 <br> <strong>Por:</strong> R$ 39,99</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/2g28zVzr7O" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lzkw1ozr2mxhb8.webp" alt="Calça Jeans Skinny Levanta Bumbum" class="product-img">
-            <div class="product-body">
-                <h5>Calça Jeans Skinny Levanta Bumbum</h5>
-                <p>Diversas cores para combinar com seu estilo 🌟</p>
-                <p><strong>De:</strong> R$ 72,29 <br> <strong>Por:</strong> R$ 60,00</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/2ViinC0xml" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m35ck2uzvtw3de.webp" alt="Kit Biquíni Cortininha + Saída de Praia" class="product-img">
-            <div class="product-body">
-                <h5>Kit Biquíni Cortininha + Saída de Praia</h5>
-                <p>Bojo removível, charme e conforto na praia ou piscina 🌊</p>
-                <p><strong>De:</strong> R$ 89,40 <br> <strong>Por:</strong> R$ 59,90</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/5pzAlIobpZ" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/br-11134207-7qukw-lfxa7no8wvsu41.webp" alt="Tênis Feminino Casual" class="product-img">
-            <div class="product-body">
-                <h5>Tênis Feminino Casual</h5>
-                <p>Ande com mais leveza e elegância no dia a dia ✨</p>
-                <p><strong>De:</strong> R$ 63,97 <br> <strong>Por:</strong> R$ 49,90</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-    </div>
-</div>
+window.addEventListener('scroll', ()=> {
+  document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+</script>
 
 
-        <!-- Categoria Cabelo e Beleza -->
-<div class="category-wrapper">
-    <h2 class="category-title">Cabelo e Beleza</h2>
-    <div class="carousel-container">
-        <a href="https://s.shopee.com.br/60IayZhPAb" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rbnb-lnyfxrzhs0tt29.webp" alt="Modelador Profissional de Cabelo" class="product-img">
-            <div class="product-body">
-                <h5>Modelador Profissional de Cabelo</h5>
-                <p>Não perca essa chance de arrasar em qualquer ocasião! 💁‍♀️</p>
-                <p><strong>De:</strong> R$ 167,62 <br> <strong>Por:</strong> R$ 56,99</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/LeEDP8h9O" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7qvdd-lilyod2cwtfbc6@resize_w450_nl.webp" alt="Protetor Solar Facial Anasol" class="product-img">
-            <div class="product-body">
-                <h5>Protetor Solar Facial Anasol</h5>
-                <p>Fórmula vegana, ação clareadora. Disponível em tons médio e claro. 🌿</p>
-                <p><strong>De:</strong> R$ 77,38 <br> <strong>Por:</strong> R$ 61,13</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/2B5sNGM9lT" target="_blank" class="product-card">
-            <img src="https://down-br.img.susercontent.com/file/sg-11134201-22110-1w82hxud1rjv13.webp" alt="Kit Lola Cosmétics Reconstrução" class="product-img">
-            <div class="product-body">
-                <h5>Kit Lola Cosmétics Reconstrução – 5 Itens</h5>
-                <p>Cuidados completos com super desconto 💇‍♀️✨</p>
-                <p><strong>De:</strong> R$ 258,63 <br> <strong>Por:</strong> R$ 131,90</p>
-                <div class="btn-buy">Comprar na Shopee</div>
-            </div>
-        </a>
-    </div>
-</div>
-
-
-
-
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Achadinhos Shopee VIP | Orange Store. Todos os direitos reservados.</p>
-    </footer>
 </body>
-
 </html>
