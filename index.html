@@ -10,6 +10,17 @@
   --card: #0b1220;
   --muted: #94a3b8;
   --accent: #ff7a59;
+  --text: #e6eef8;
+}
+
+body.light-mode {
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --muted: #4b5563;
+  --accent: #ff5c2e;
+  --text: #111827;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f3f9 100%);
+  color: var(--text);
 }
 
 * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -18,12 +29,13 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   background: linear-gradient(180deg, #081024 0%, #071026 50%, #06101a 100%);
-  color: #e6eef8;
+  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
@@ -33,15 +45,39 @@ header {
 
 header .avatar {
   width: 86px; height: 86px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #ffd6c2, #ff9b7d);
+  border-radius: 50%;
+  background:  #e94a1a;
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; color: #2a0b00; font-size: 26px;
   margin: 0 auto 16px;
+  overflow: hidden;
+}
+
+header .avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
 }
 
 header h1 { margin: 0; font-size: 20px; }
 header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card);
+  color: var(--accent);
+  border: 1px solid #e94a1a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  z-index: 200;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 .categories {
   display: flex;
@@ -59,7 +95,7 @@ header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
   border-radius: 14px;
   font-size: 16px;
   font-weight: 600;
-  background: linear-gradient(90deg, #ff7a59, #ff5c2e);
+  background: #e94a1a;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -70,7 +106,7 @@ header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
 
 .cat-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,122,89,0.4);
+  box-shadow: 0 0 20px #e94a1a;
 }
 
 section {
@@ -121,7 +157,7 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, background 0.3s;
 }
 
 .card:hover { transform: scale(1.03); }
@@ -145,7 +181,7 @@ section h2 {
 .btn {
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(255,122,89,0.3);
+  border: 1px solid #e94a1a;
   background: #071028;
   color: var(--accent);
   cursor: pointer;
@@ -155,7 +191,7 @@ section h2 {
   text-decoration: none;
 }
 
-.btn:hover { background: #ff7a59; color: #fff; }
+.btn:hover { background: #e94a1a; color: #fff; }
 
 .arrow {
   position: absolute;
@@ -163,7 +199,7 @@ section h2 {
   transform: translateY(-50%);
   background: rgba(15,23,36,0.8);
   border: none;
-  color: #ff7a59;
+  color: #e94a1a;
   font-size: 24px;
   width: 40px; height: 40px;
   border-radius: 50%;
@@ -172,7 +208,7 @@ section h2 {
   transition: all 0.3s;
 }
 
-.arrow:hover { background: #ff7a59; color: #fff; }
+.arrow:hover { background: #e94a1a; color: #fff; }
 
 .arrow-left { left: -20px; }
 .arrow-right { right: -20px; }
@@ -181,35 +217,26 @@ section h2 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #ff7a59;
+  background: #e94a1a;
   color: #fff;
   border: none;
   border-radius: 50%;
   width: 50px; height: 50px;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255,122,89,0.4);
+  box-shadow: 0 0 15px #e94a1a;
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
 
-.toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15,23,36,0.95);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
+footer {
+  text-align: center;
   font-size: 13px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+  color: var(--muted);
+  padding: 30px 0;
 }
-.toast.show { opacity: 1; }
 
 @media (max-width: 780px) {
   .card { flex: 0 0 calc(50% - 12px); }
@@ -224,8 +251,14 @@ section h2 {
 </head>
 <body>
 
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Light / Dark</button>
+
 <header>
-  <div class="avatar">OS</div>
+  <a href="https://www.instagram.com/achadinhos.orangestore/" target="_blank">
+    <div class="avatar">
+      <!-- <img src="https://instagram.fpoa13-1.fna.fbcdn.net/v/t51.2885-19/553363605_17915969412192373_7632742787825725993_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fpoa13-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGuoIogUexi_fpjhBTzUzwQmMUD29lUs75zouvFsX7OpUGckr7aTZdsT1DZzQ-KNKKkTz6iX62Muk54WU-mzqYp&_nc_ohc=zyfYWIkHNnsQ7kNvwGG_yDl&_nc_gid=QULpRbReWLFI-b2li5j1BQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfeWK0hBH3IOdl5JUPqyKEiVjBWGvTfbrsgaFVNoJhtYKQ&oe=68ED7632&_nc_sid=7a9f4b" alt="Logo Achadinhos Orangestore">  -->
+    </div>
+  </a>
   <h1>@achadinhos.orangestore — Achadinhos Shopee VIP 🏅</h1>
   <p>💥 Ofertas exclusivas todo dia • 🏠 Melhores achados da Shopee!</p>
 </header>
@@ -273,34 +306,43 @@ section h2 {
   </div>
 </section>
 
+<footer>
+  Desenvolvido por <strong>Tayse Rosa</strong> by <strong>Achadinhos Shopee</strong>.
+</footer>
+
 <button id="backTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
 <script>
+function toggleTheme() {
+  document.body.classList.toggle('light-mode');
+}
+
 const LINKS = {
   criancas: [
-    { title:'Toca Barraca Infantil 5 em 1', subtitle:'Diversão sem fim', url:'https://s.shopee.com.br/4AqyGWT1HO', img:'https://via.placeholder.com/250x140?text=Toca+Barraca' },
-    { title:'Brinquedos de Blocos Magnéticos', subtitle:'Construa mundos incríveis', url:'https://s.shopee.com.br/9zolDHo0BF', img:'https://via.placeholder.com/250x140?text=Blocos' },
-    { title:'Bicicletas Infantil', subtitle:'Diversão e segurança', url:'https://s.shopee.com.br/7pkGdNCIln', img:'https://via.placeholder.com/250x140?text=Bicicleta' },
-    { title:'Triciclo Totoka Motoca', subtitle:'Diversão em duas rodas', url:'https://s.shopee.com.br/AKRbc0fZfp', img:'https://via.placeholder.com/250x140?text=Triciclo' },
-    { title:'Microfone de Karaokê Infantil Bluetooth', subtitle:'Diversão musical', url:'https://s.shopee.com.br/7AUjeeXGYp', img:'https://via.placeholder.com/250x140?text=Microfone' }
+    { title:'Toca Barraca Infantil 5 em 1', subtitle:'Diversão sem fim', url:'https://s.shopee.com.br/6KvgrX3xFh', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-mbsac3s7n6ft98_tn' },
+    { title:'Brinquedos de Blocos Magnéticos', subtitle:'Construa mundos incríveis', url:'https://s.shopee.com.br/6AcGfE4aag', img:'https://down-br.img.susercontent.com/file/br-11134207-81z1k-me5hdl139q812d.webp' },
+    { title:'Bicicletas Infantil', subtitle:'Diversão e segurança', url:'https://s.shopee.com.br/60IqSv5Dvf', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rd64-lutzi7m7oooc5d.webp' },
+    { title:'Triciclo Totoka Motoca', subtitle:'Diversão em duas rodas', url:'https://s.shopee.com.br/5pzQGc5rGe', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m8m62ev4shhte4.webp' },
+    { title:'Microfone de Karaokê Infantil Bluetooth', subtitle:'Diversão musical', url:'https://s.shopee.com.br/1LX0uSotIf', img:'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lhns9z8fs3uf7f.webp' }
   ],
   natal: [
-    { title:'Cascata de Pisca-Pisca Bola de Natal', subtitle:'3m, 100 LEDs', url:'https://s.shopee.com.br/6fYTD05HpH', img:'https://via.placeholder.com/250x140?text=Pisca-Pisca' },
-    { title:'Boneco Papai Noel Musical', subtitle:'Sobe e desce', url:'https://s.shopee.com.br/qagG5WLCB', img:'https://via.placeholder.com/250x140?text=Papai+Noel' },
-    { title:'Luminária LED 3D Criativa', subtitle:'Mesa decorativa', url:'https://s.shopee.com.br/9Usea5FOq2', img:'https://via.placeholder.com/250x140?text=Luminaria' },
-    { title:'Corda LED', subtitle:'Decoração Natalina', url:'https://s.shopee.com.br/8zwNzNKmZQ', img:'https://via.placeholder.com/250x140?text=CordaLED' }
+    { title:'Cascata de Pisca-Pisca Bola de Natal', subtitle:'3m, 100 LEDs', url:'https://s.shopee.com.br/4fnSsihq0p', img:'https://down-br.img.susercontent.com/file/sg-11134201-7reow-m2rcbu91l2933e.webp' },
+    { title:'Boneco Papai Noel Musical', subtitle:'Sobe e desce', url:'https://s.shopee.com.br/4VU2gPiTLo', img:'https://down-br.img.susercontent.com/file/91cb2a82486b8b37d93f9717dda6f4e6.webp' },
+    { title:'Luminária LED 3D Criativa', subtitle:'Mesa decorativa', url:'https://s.shopee.com.br/4LAcU6j6gn', img:'https://down-br.img.susercontent.com/file/sg-11134201-7ra3e-m51h8gntgw9a57.webp' },
+    { title:'Corda LED', subtitle:'Decoração Natalina', url:'https://s.shopee.com.br/4ArCHnjk1m', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rdvz-lzgpf48b8dknc7.webp' }
   ],
   casa: [
-    { title:'Varal Retrátil Parede 30m', subtitle:'Mais reforçado e prático', url:'https://s.shopee.com.br/2B5tsQY0Ok', img:'https://via.placeholder.com/250x140?text=Varal' },
-    { title:'Cozinha Compacta Madesa Diamante', subtitle:'Armário, balcão e tampo', url:'https://s.shopee.com.br/20mTgAKEGT', img:'https://via.placeholder.com/250x140?text=Cozinha' },
-    { title:'Personal Blender Mondial 300W', subtitle:'Prepare sucos e shakes', url:'https://s.shopee.com.br/2VikHBxpYz', img:'https://via.placeholder.com/250x140?text=Blender' },
-    { title:'Kit Bowls Electrolux', subtitle:'Organização na cozinha', url:'https://s.shopee.com.br/AKRbbo6ksr', img:'https://via.placeholder.com/250x140?text=Bowls' }
+    { title:'Varal Retrátil Parede 30m', subtitle:'Mais reforçado e prático', url:'https://s.shopee.com.br/3fuvh8sNfA', img: 'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lhkvt75ft1y5ab.webp' },
+    { title:'Cozinha Compacta Madesa Diamante', subtitle:'Armário, balcão e tampo', url:'https://s.shopee.com.br/3qELtRrkKD', img: 'https://down-br.img.susercontent.com/file/sg-11134201-22110-zxd14bzq2bkv47.webp' },
+    { title:'Personal Blender Mondial 300W', subtitle:'Prepare sucos e shakes', url:'https://s.shopee.com.br/3LI5IWteL8', img: 'https://down-br.img.susercontent.com/file/sg-11134201-7ratt-mb4mom044fab6d.webp' },
+    { title:'Kit Bowls Electrolux', subtitle:'Organização na cozinha', url:'https://s.shopee.com.br/3VbVUpt10B', img: 'https://down-br.img.susercontent.com/file/sg-11134201-7rbkb-llur3ohzqhg087.webp' },
   ],
+  
   beleza: [
-    { title:'Escova Secadora Britânia 4 em 1', subtitle:'Cabelo bonito e seco rápido', url:'https://s.shopee.com.br/BKpUxEIiM', img:'https://via.placeholder.com/250x140?text=Escova' },
-    { title:'Modelador Profissional de Cabelo', subtitle:'Arrase em qualquer ocasião', url:'https://s.shopee.com.br/60IayZhPAb', img:'https://via.placeholder.com/250x140?text=Modelador' },
-    { title:'Protetor Solar Facial Anasol', subtitle:'Proteção e cuidado', url:'https://s.shopee.com.br/LeEDP8h9O', img:'https://via.placeholder.com/250x140?text=Protetor' },
-    { title:'Kit Lola Cosmétics 5 Itens', subtitle:'Reconstrução Danos Vorazes', url:'https://s.shopee.com.br/2B5sNGM9lT', img:'https://via.placeholder.com/250x140?text=Kit+Cosmeticos' }
+    { title:'Escova Secadora Britânia 4 em 1', subtitle:'Cabelo bonito e seco rápido', url:'https://s.shopee.com.br/5L39gINc6E', img: 'https://down-br.img.susercontent.com/file/sg-11134201-824ja-mf0lprem1rm329.webp' },
+    { title:'Modelador Profissional de Cabelo', subtitle:'Arrase em qualquer ocasião', url:'https://s.shopee.com.br/5VMZsbMylH', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rbnb-lnyfxrzhs0tt29.webp' },
+    { title:'Protetor Solar Facial Anasol', subtitle:'Proteção e cuidado', url:'https://s.shopee.com.br/6Kvgs8Jo4S', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6fhmwcyn3nrf6.webp' },
+    { title:'Kit Lola Cosmétics 5 Itens', subtitle:'Reconstrução Danos Vorazes', url:'https://s.shopee.com.br/6VF74RJAjV', img:'https://down-br.img.susercontent.com/file/sg-11134201-22110-u6zyrxud1rjv6a.webp' }
   ]
 };
 
@@ -317,14 +359,12 @@ function createCards(sectionId, items) {
       </div>
       <div class="actions">
         <a class="btn" href="${item.url}" target="_blank">🛒 Comprar</a>
-        
       </div>
     `;
     container.appendChild(card);
   });
 }
 
-// CORREÇÃO: Mapear corretamente os IDs de grid para o objeto LINKS
 const mapping = {
   'grid-criancas': 'criancas',
   'grid-natal': 'natal',
@@ -348,7 +388,5 @@ window.addEventListener('scroll', ()=> {
   document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
 });
 </script>
-
-
 </body>
 </html>
