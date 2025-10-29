@@ -1,392 +1,939 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>:: Achadinhos Shopee ::</title>
-<style>
-:root {
-  --bg: #0f1724;
-  --card: #0b1220;
-  --muted: #94a3b8;
-  --accent: #ff7a59;
-  --text: #e6eef8;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-body.light-mode {
-  --bg: #f7f8fa;
-  --card: #ffffff;
-  --muted: #4b5563;
-  --accent: #ff5c2e;
-  --text: #111827;
-  background: linear-gradient(180deg, #ffffff 0%, #f0f3f9 100%);
-  color: var(--text);
-}
+    <title>Tayse Rosa</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-* { box-sizing: border-box; scroll-behavior: smooth; }
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./assets/img/logo.ico" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  margin: 0;
-  background: linear-gradient(180deg, #081024 0%, #071026 50%, #06101a 100%);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  overflow-x: hidden;
-  transition: background 0.3s, color 0.3s;
-}
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-header {
-  text-align: center;
-  margin: 60px 20px 40px;
-}
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
 
-header .avatar {
-  width: 86px; height: 86px;
-  border-radius: 50%;
-  background:  #e94a1a;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; color: #2a0b00; font-size: 26px;
-  margin: 0 auto 16px;
-  overflow: hidden;
-}
+  <body>
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-header .avatar img {
-  width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
-}
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="d-flex flex-column">
+        <div class="profile">
+          <img
+            src="https://www.github.com/tayserosa.png"
+            alt="Tayse Rosa"
+            class="img-fluid rounded-circle"
+          />
+          <h1 class="text-light"><a href="index.html">Tayse Rosa</a></h1>
+          <div class="social-links mt-3 text-center">
+            <a
+              href="https://github.com/tayserosa"
+              target="_blank"
+              class="twitter"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/tayserosa/"
+              target="_blank"
+              class="instagram"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/tayse-rosa/"
+              target="_blank"
+              class="linkedin"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <!--
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          --></div>
+        </div>
 
-header h1 { margin: 0; font-size: 20px; }
-header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
-
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--card);
-  color: var(--accent);
-  border: 1px solid #e94a1a;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-  z-index: 200;
-}
-.theme-toggle:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-.categories {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 60px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.cat-btn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  background: #e94a1a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.cat-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #e94a1a;
-}
-
-section {
-  width: 100%;
-  max-width: 960px;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  scroll-margin-top: 80px;
-}
-
-section h2 {
-  font-size: 22px;
-  color: var(--accent);
-  margin-bottom: 24px;
-  text-align: center;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-}
-
-.carousel::-webkit-scrollbar { display: none; }
-
-.card {
-  flex: 0 0 calc(25% - 12px);
-  background: var(--card);
-  border-radius: 14px;
-  padding: 14px;
-  border: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: transform 0.25s ease, background 0.3s;
-}
-
-.card:hover { transform: scale(1.03); }
-
-.card .thumb {
-  width: 100%; height: 140px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #081226;
-}
-
-.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
-
-.card .info h3 { margin: 0; font-size: 14px; }
-.card .info p { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
-
-.card .actions {
-  display: flex; gap: 6px; margin-top: 8px;
-}
-
-.btn {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid #e94a1a;
-  background: #071028;
-  color: var(--accent);
-  cursor: pointer;
-  font-size: 13px;
-  transition: 0.3s;
-  display: flex; align-items: center; gap: 6px;
-  text-decoration: none;
-}
-
-.btn:hover { background: #e94a1a; color: #fff; }
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(15,23,36,0.8);
-  border: none;
-  color: #e94a1a;
-  font-size: 24px;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s;
-}
-
-.arrow:hover { background: #e94a1a; color: #fff; }
-
-.arrow-left { left: -20px; }
-.arrow-right { right: -20px; }
-
-#backTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #e94a1a;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 50px; height: 50px;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 0 15px #e94a1a;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-
-footer {
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  padding: 30px 0;
-}
-
-@media (max-width: 780px) {
-  .card { flex: 0 0 calc(50% - 12px); }
-  .arrow-left { left: 0; }
-  .arrow-right { right: 0; }
-}
-
-@media (max-width: 480px) {
-  .card { flex: 0 0 calc(70% - 12px); }
-}
-</style>
-</head>
-<body>
-
-<button class="theme-toggle" onclick="toggleTheme()">🌙 Light / Dark</button>
-
-<header>
-  <a href="https://www.instagram.com/achadinhos.orangestore/" target="_blank">
-    <div class="avatar">
-      <!-- <img src="https://instagram.fpoa13-1.fna.fbcdn.net/v/t51.2885-19/553363605_17915969412192373_7632742787825725993_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fpoa13-1.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGuoIogUexi_fpjhBTzUzwQmMUD29lUs75zouvFsX7OpUGckr7aTZdsT1DZzQ-KNKKkTz6iX62Muk54WU-mzqYp&_nc_ohc=zyfYWIkHNnsQ7kNvwGG_yDl&_nc_gid=QULpRbReWLFI-b2li5j1BQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfeWK0hBH3IOdl5JUPqyKEiVjBWGvTfbrsgaFVNoJhtYKQ&oe=68ED7632&_nc_sid=7a9f4b" alt="Logo Achadinhos Orangestore">  -->
-    </div>
-  </a>
-  <h1>@achadinhos.orangestore — Achadinhos Shopee VIP 🏅</h1>
-  <p>💥 Ofertas exclusivas todo dia • 🏠 Melhores achados da Shopee!</p>
-</header>
-
-<div class="categories">
-  <button class="cat-btn" onclick="scrollToSection('criancas')">🎈 Dia das Crianças</button>
-  <button class="cat-btn" onclick="scrollToSection('natal')">🎄 Natal</button>
-  <button class="cat-btn" onclick="scrollToSection('casa')">🏠 Casa & Decoração</button>
-  <button class="cat-btn" onclick="scrollToSection('beleza')">💅 Beleza</button>
-</div>
-
-<section id="criancas">
-  <h2>🎈 Dia das Crianças</h2>
-  <div class="carousel-container">
-    <button class="arrow arrow-left" onclick="scrollCarousel('grid-criancas', -1)">&#8592;</button>
-    <div class="carousel" id="grid-criancas"></div>
-    <button class="arrow arrow-right" onclick="scrollCarousel('grid-criancas', 1)">&#8594;</button>
-  </div>
-</section>
-
-<section id="natal">
-  <h2>🎄 Natal</h2>
-  <div class="carousel-container">
-    <button class="arrow arrow-left" onclick="scrollCarousel('grid-natal', -1)">&#8592;</button>
-    <div class="carousel" id="grid-natal"></div>
-    <button class="arrow arrow-right" onclick="scrollCarousel('grid-natal', 1)">&#8594;</button>
-  </div>
-</section>
-
-<section id="casa">
-  <h2>🏠 Casa & Decoração</h2>
-  <div class="carousel-container">
-    <button class="arrow arrow-left" onclick="scrollCarousel('grid-casa', -1)">&#8592;</button>
-    <div class="carousel" id="grid-casa"></div>
-    <button class="arrow arrow-right" onclick="scrollCarousel('grid-casa', 1)">&#8594;</button>
-  </div>
-</section>
-
-<section id="beleza">
-  <h2>💅 Beleza</h2>
-  <div class="carousel-container">
-    <button class="arrow arrow-left" onclick="scrollCarousel('grid-beleza', -1)">&#8592;</button>
-    <div class="carousel" id="grid-beleza"></div>
-    <button class="arrow arrow-right" onclick="scrollCarousel('grid-beleza', 1)">&#8594;</button>
-  </div>
-</section>
-
-<footer>
-  Desenvolvido por <strong>Tayse Rosa</strong> by <strong>Achadinhos Shopee</strong>.
-</footer>
-
-<button id="backTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-}
-
-const LINKS = {
-  criancas: [
-    { title:'Toca Barraca Infantil 5 em 1', subtitle:'Diversão sem fim', url:'https://s.shopee.com.br/6KvgrX3xFh', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-mbsac3s7n6ft98_tn' },
-    { title:'Brinquedos de Blocos Magnéticos', subtitle:'Construa mundos incríveis', url:'https://s.shopee.com.br/6AcGfE4aag', img:'https://down-br.img.susercontent.com/file/br-11134207-81z1k-me5hdl139q812d.webp' },
-    { title:'Bicicletas Infantil', subtitle:'Diversão e segurança', url:'https://s.shopee.com.br/60IqSv5Dvf', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rd64-lutzi7m7oooc5d.webp' },
-    { title:'Triciclo Totoka Motoca', subtitle:'Diversão em duas rodas', url:'https://s.shopee.com.br/5pzQGc5rGe', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m8m62ev4shhte4.webp' },
-    { title:'Microfone de Karaokê Infantil Bluetooth', subtitle:'Diversão musical', url:'https://s.shopee.com.br/1LX0uSotIf', img:'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lhns9z8fs3uf7f.webp' }
-  ],
-  natal: [
-    { title:'Cascata de Pisca-Pisca Bola de Natal', subtitle:'3m, 100 LEDs', url:'https://s.shopee.com.br/4fnSsihq0p', img:'https://down-br.img.susercontent.com/file/sg-11134201-7reow-m2rcbu91l2933e.webp' },
-    { title:'Boneco Papai Noel Musical', subtitle:'Sobe e desce', url:'https://s.shopee.com.br/4VU2gPiTLo', img:'https://down-br.img.susercontent.com/file/91cb2a82486b8b37d93f9717dda6f4e6.webp' },
-    { title:'Luminária LED 3D Criativa', subtitle:'Mesa decorativa', url:'https://s.shopee.com.br/4LAcU6j6gn', img:'https://down-br.img.susercontent.com/file/sg-11134201-7ra3e-m51h8gntgw9a57.webp' },
-    { title:'Corda LED', subtitle:'Decoração Natalina', url:'https://s.shopee.com.br/4ArCHnjk1m', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rdvz-lzgpf48b8dknc7.webp' }
-  ],
-  casa: [
-    { title:'Varal Retrátil Parede 30m', subtitle:'Mais reforçado e prático', url:'https://s.shopee.com.br/3fuvh8sNfA', img: 'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lhkvt75ft1y5ab.webp' },
-    { title:'Cozinha Compacta Madesa Diamante', subtitle:'Armário, balcão e tampo', url:'https://s.shopee.com.br/3qELtRrkKD', img: 'https://down-br.img.susercontent.com/file/sg-11134201-22110-zxd14bzq2bkv47.webp' },
-    { title:'Personal Blender Mondial 300W', subtitle:'Prepare sucos e shakes', url:'https://s.shopee.com.br/3LI5IWteL8', img: 'https://down-br.img.susercontent.com/file/sg-11134201-7ratt-mb4mom044fab6d.webp' },
-    { title:'Kit Bowls Electrolux', subtitle:'Organização na cozinha', url:'https://s.shopee.com.br/3VbVUpt10B', img: 'https://down-br.img.susercontent.com/file/sg-11134201-7rbkb-llur3ohzqhg087.webp' },
-  ],
-  
-  beleza: [
-    { title:'Escova Secadora Britânia 4 em 1', subtitle:'Cabelo bonito e seco rápido', url:'https://s.shopee.com.br/5L39gINc6E', img: 'https://down-br.img.susercontent.com/file/sg-11134201-824ja-mf0lprem1rm329.webp' },
-    { title:'Modelador Profissional de Cabelo', subtitle:'Arrase em qualquer ocasião', url:'https://s.shopee.com.br/5VMZsbMylH', img:'https://down-br.img.susercontent.com/file/sg-11134201-7rbnb-lnyfxrzhs0tt29.webp' },
-    { title:'Protetor Solar Facial Anasol', subtitle:'Proteção e cuidado', url:'https://s.shopee.com.br/6Kvgs8Jo4S', img:'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6fhmwcyn3nrf6.webp' },
-    { title:'Kit Lola Cosmétics 5 Itens', subtitle:'Reconstrução Danos Vorazes', url:'https://s.shopee.com.br/6VF74RJAjV', img:'https://down-br.img.susercontent.com/file/sg-11134201-22110-u6zyrxud1rjv6a.webp' }
-  ]
-};
-
-function createCards(sectionId, items) {
-  const container = document.getElementById(sectionId);
-  items.forEach(item=>{
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="thumb"><img src="${item.img}" alt="${item.title}"></div>
-      <div class="info">
-        <h3>${item.title}</h3>
-        <p>${item.subtitle}</p>
+        <nav id="navbar" class="nav-menu navbar">
+          <ul>
+            <li>
+              <a href="#hero" class="nav-link scrollto active"
+                ><i class="bx bx-home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="#about" class="nav-link scrollto"
+                ><i class="bx bx-user"></i> <span>Sobre</span></a
+              >
+            </li>
+            <li>
+              <a href="#resume" class="nav-link scrollto"
+                ><i class="bx bx-file-blank"></i> <span>Experiências</span></a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" class="nav-link scrollto"
+                ><i class="bx bx-book-content"></i> <span>Portfólio</span></a
+              >
+            </li>
+            <!--<li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Serviços</span></a></li>-->
+            <li>
+              <a href="#contact" class="nav-link scrollto"
+                ><i class="bx bx-envelope"></i> <span>Contato</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
       </div>
-      <div class="actions">
-        <a class="btn" href="${item.url}" target="_blank">🛒 Comprar</a>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="hero-container" data-aos="fade-in">
+        <h1>Tayse Rosa</h1>
+        <p>
+          <span
+            class="typed"
+            data-typed-items="Desenvolvedora web, Freelancer, Desenvolvedora Wordpress"
+          ></span>
+        </p>
+
+        <p>
+          <img
+            src="/assets/img/stacks/html5.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/css3.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/bootstrap.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/javascript.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/php.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/react-native.svg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/git.jpg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/nextjs.jpg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/reactjs.jpg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/sass.jpg"
+            width="30"
+            height="30"
+          />
+          <img
+            src="/assets/img/stacks/tailwindcss.jpg"
+            width="30"
+            height="30"
+          />
+
+          <img
+            src="/assets/img/stacks/typescript.jpg"
+            width="30"
+            height="30"
+          />
+        </p>
       </div>
-    `;
-    container.appendChild(card);
-  });
-}
+    </section>
+    <!-- End Hero -->
 
-const mapping = {
-  'grid-criancas': 'criancas',
-  'grid-natal': 'natal',
-  'grid-casa': 'casa',
-  'grid-beleza': 'beleza'
-};
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>✨Sobre mim</h2>
+            <p>
+              Sou desenvolvedora especializada em WordPress, com experiência na
+              criação de sites, temas e plugins personalizados, voltados para
+              performance, usabilidade e otimização. Gaúcha de Porto Alegre,
+              atuo como freelancer desde 2013, desenvolvendo soluções sob medida
+              para clientes e agências, além de produzir templates e plugins
+              para marketplaces como ThemeForest e TemplateMonster. Ao longo da
+              minha trajetória, também aprofundei meus conhecimentos como
+              desenvolvedora Full Stack JavaScript, utilizando stacks modernas
+              para criar aplicações web completas, integrando frontend e backend
+              com foco em escalabilidade e boas práticas. Possuo domínio de
+              tecnologias como WordPress, PHP, HTML5, CSS3, JavaScript, React,
+              Node.js, Bootstrap e React Native. Atualmente, curso Análise e
+              Desenvolvimento de Sistemas (trancado temporariamente na Ulbra),
+              mas sigo me atualizando constantemente para acompanhar as
+              tendências do mercado.
+            </p>
+          </div>
 
-Object.keys(mapping).forEach(gridId => {
-  createCards(gridId, LINKS[mapping[gridId]]);
-});
+          <div class="row">
+            <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <h3>Desenvolvedora web / mobile</h3>
+              <p class="fst-italic"></p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>GitHub:</strong>
+                      <span>
+                        <a href="https://github.com/tayserosa" target="_blank"
+                          >www.github.com/tayserosa</a
+                        >
+                      </span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>LinkedIn:</strong>
+                      <span>
+                        <a
+                          href="https://www.linkedin.com/in/tayse-rosa/"
+                          target="_blank"
+                          >www.linkedin.com/in/tayse-rosa</a
+                        >
+                      </span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Instagram:</strong>
+                      <span>
+                        <a
+                          href="https://www.instagram.com/tayserosa/"
+                          target="_blank"
+                        >
+                          www.instagram.com/tayserosa
+                        </a>
+                      </span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>WhatsApp:</strong> <span>+55 51 9 8236-8077</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Escolaridade:</strong> <span> ADS - Ulbra </span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>City:</strong>
+                      <span>Porto Alegre, RS / Brasil</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>E-mail:</strong>
+                      <span>contato@coderosa.tech</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Freelancer:</strong> <span> 🟢 Disponível</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
 
-function scrollToSection(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+      <!-- ======= Skills Section ======= 
+      <section id="skills" class="skills section-bg">
+        <div class="container">
+          <div class="section-title">
+            <h2>Tecnologias</h2>
+          </div>
 
-function scrollCarousel(id, direction) {
-  const container = document.getElementById(id);
-  const scrollAmount = container.offsetWidth * 0.8; 
-  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-}
+          <div class="row skills-content">
+            <div class="col-lg-4" data-aos="fade-up">
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/html5-e-css3.jpg" width="25" height="25" />
+                  HTML / CSS <i class="val">95%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
 
-window.addEventListener('scroll', ()=> {
-  document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
-});
-</script>
-</body>
+              <div class="progress">
+                <span class="skill">
+                  <img
+                    src="/images/tailwindcss.jpg"
+                    width="25"
+                    height="25"
+                  />TaiwindCSS <i class="val">95%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/sass.jpg" width="25" height="25" /> Sass
+                  <i class="val">90%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/bootstrap.jpg" width="25" height="25" />
+                  Bootstrap <i class="val">90%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/git.jpg" width="25" height="25" /> Git /
+                  Github <i class="val">90%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/php.jpg" width="25" height="25" /> PHP
+                  <i class="val">90%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/php.jpg" width="25" height="25" /> Wordpress
+                  Themes <i class="val">75%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/php.jpg" width="25" height="25" /> Wordpress
+                  Plugins <i class="val">75%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/javascript.jpg" width="25" height="25" />
+                  JavaScript / Typescript<i class="val">80%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/reactjs.jpg" width="25" height="25" /> React
+                  JS <i class="val">80%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/react-native.jpg" width="25" height="25" />
+                  React Native <i class="val">75</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  <img src="/images/nextjs.jpg" width="25" height="25" /> Next
+                  JS (Estudando) <i class="val">5%</i></span
+                >
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="5"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Skills Section -->
+
+      <!-- ======= Resume Section ======= -->
+      <section id="resume" class="resume">
+        <div class="container">
+          <div class="section-title">
+            <h2 style="color: #49134e">Experiência</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+              <h3 class="resume-title">Educação</h3>
+
+              <div class="resume-item">
+                <h4>RocketSeat, B7 Web e Udemy</h4>
+                <h5>2022 - 2025</h5>
+                <p>
+                  <em> Cursos de especializações em Desenvolvimento Web</em>
+                </p>
+                <p>
+                  Diversos cursos na área de desenvolvimento web/mobile nessas
+                  plataformas.
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4>Curso de Inglês | Nível Intermediario</h4>
+                <h5>2021 - 2022</h5>
+                <p><em> Inglês Winner </em></p>
+                <p>Curso de Inglês</p>
+              </div>
+
+              <div class="resume-item">
+                <h4>Análise e Desenvolvimento de Sistemas</h4>
+                <h5>2023</h5>
+                <p><em>Ulbra - Universidade Luterana do Brasil</em></p>
+                <p>
+                  Cursando Análise e Desenvolvimento de Sistemas na Ulbra (curso
+                  trancado no momento)
+                </p>
+              </div>
+
+              <div class="resume-item">
+                <h4>Técnico em Informática</h4>
+                <h5>2008 - 2010</h5>
+                <p><em>QI - Escolas e Faculdades </em></p>
+                <p>
+                  Cursei técnico em informática além de também trabalhar na QI
+                  Escolas e Faculdades.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Experiência profissional</h3>
+
+              <div class="resume-item">
+                <h4>Desenvolvedor FrontEnd</h4>
+                <h5>2023</h5>
+                <p><em>CodePress · Autônomo </em></p>
+                <ul>
+                  <li>
+                    Desenvolvimento Front end para plataformas como Theme Forest
+                    e Template Monster
+                  </li>
+                  <li>Freelancer na plataforma GetNinjas</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Desenvolvedor Javascript Fullstack</h4>
+                <h5>2022</h5>
+                <p><em>Trixx Tecnologia & Marketing · Autônomo </em></p>
+                <ul>
+                  <li>Desenvolvimento mobile com React Native</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Analista de sistemas treinee</h4>
+                <h5>2013 - 2015</h5>
+                <p><em>Service IT</em></p>
+                <ul>
+                  <li>Desenvolvedor JS (Service Now)</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Desenvolvimento Web (Wordpress) · Estagiária</h4>
+                <h5>2013 - 2012</h5>
+                <p><em>Agência Cooler Conteúdo</em></p>
+                <ul>
+                  <li>Desenvolvedor JS (Service Now)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Resume Section -->
+
+      <!-- ======= Portfolio Section ======= -->
+      <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+          <div class="section-title">
+            <h2>Portfólio</h2>
+          </div>
+
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-web">Desenvolvimento Web</li>
+                <li data-filter=".filter-app">Desenvolvimento Mobile</li>
+                <li data-filter=".filter-plugin">Plugin Wordpress</li>
+                <li data-filter=".filter-card">Artes para Instagram</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="row portfolio-container"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="">
+                  <img
+                    src="assets/img/em_breve.png"
+                    class="img-fluid"
+                    alt="App DevBarber"
+                  />
+                </a>
+                <div class="portfolio-links">
+                  <a
+                    href="#"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="App DevBarber - Um app para encontrar barbeiros próximo de você, favoritá-lo, e agendar serviços."
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="#" target="_blank" title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <a href="">
+                  <img
+                    src="assets/img/portfolio/devfolio.jpg"
+                    class="img-fluid"
+                    alt="Template Devfolio"
+                  />
+                </a>
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/devfolio.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Template Devfolio à venda na plataforma TemplateMonster"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a
+                    href="https://www.templatemonster.com/landing-page-templates/devfolio-personal-portfolio-html-template-372938.html?_gl=1*1mvzas4*_ga*Nzg4MTE3MDEwLjE2OTk4OTM5MTY.*_ga_FTPYEGT5LY*MTcwMTIwNzAyMy4zMC4xLjE3MDEyMDcwMzkuNDQuMC4w"
+                    target="_blank"
+                    title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <a href="">
+                  <img
+                    src="assets/img/portfolio/batteryJs.jpg"
+                    class="img-fluid"
+                    alt="Projeto Javascript - Bateria Web"
+                  />
+                </a>
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/batteryJs.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Projeto Javascript - Bateria Web"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a
+                    href="https://battery.coderosa.tech/"
+                    target="_blank"
+                    title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/instagram.jpg"
+                  class="img-fluid"
+                  alt="Artes para Instagram"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/instagram.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Artes para Instagram"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a
+                    href="https://www.instagram.com/imperatriztortas/"
+                    target="_blank"
+                    title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-plugin">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/plugin-footer.png"
+                  class="img-fluid"
+                  alt="Plugin Wordpress"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/plugin-footer.png"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Plugin para Wordpress"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a
+                    href="https://wordpress.org/plugins/custom-footer-codepress/"
+                    target="_blank"
+                    title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/jogo-velha.png"
+                  class="img-fluid"
+                  alt="Jogo da velha"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/jogo-velha.png"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Jogo da velha"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a
+                    href="https://jogo-da-velha.coderosa.tech"
+                    target="_blank"
+                    title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/em_breve2.png"
+                  class="img-fluid"
+                  alt="Jogo da velha"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="#"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title=""
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="#" target="_blank" title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/em_breve3.png"
+                  class="img-fluid"
+                  alt="App beber água"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="#"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title=""
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="#" target="_blank" title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/em_breve4.png"
+                  class="img-fluid"
+                  alt="App cronômetro"
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="#"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title=""
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="#" target="_blank" title="Mais Detalhes"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio Section -->
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Contato</h2>
+            <p>Entre em contato:</p>
+          </div>
+
+          <div class="row" data-aos="fade-in">
+            <div
+              class="col-lg-12"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: row;
+              "
+            >
+              <div class="phone">
+                <h6><i class="bi bi-whatsapp"></i> WhatsApp:</h6>
+                <p>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=%2B5551982368077&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                  >
+                    +55 51 98236-8077
+                  </a>
+                </p>
+              </div>
+
+              <div class="phone">
+                <h6><i class="bi bi-instagram"></i> Instagram:</h6>
+                <p>
+                  <a href="http://instagram.com/tayserosa" target="_blank">
+                    @tayserosa
+                  </a>
+                </p>
+              </div>
+
+              <div class="phone">
+                <h6><i class="bi bi-linkedin"></i> LinkedIn:</h6>
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/tayse-rosa/"
+                    target="_blank"
+                  >
+                    Tayse Rosa
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
