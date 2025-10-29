@@ -1,71 +1,50 @@
-# Portfolio Tayse {Code} Rosa
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+www.tayserosa.com
 
-Link do projeto em funcionamento: https://www.coderosa.tech	
+<h1>💜 Prazer, eu sou Tayse Rosa! <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px" height="30px"> </h1>
+  <p>UI/UX Designer & Frontend Developer — apaixonada por transformar ideias em experiências digitais que unem beleza, funcionalidade e propósito. 🚀
 
-<img src="/images/portfolio.png" alt="Portfolio">
+Estou em constante aperfeiçoamento nas áreas de UI Design, UX e Frontend, sempre buscando novas formas de criar projetos estratégicos, criativos e centrados no usuário. ✨
 
-> Portfolio www.coderosa.tech
+Acredito que um bom design vai além da estética: ele comunica, conecta e transforma. 💡</p>
+</h1>
+<p align="center">
+<a href="https://www.linkedin.com/in/tayse-rosa"><img src="https://img.shields.io/badge/-My%20LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white"/></a>
+<a href="https://instagram.com/tayserosa"><img src="https://img.shields.io/badge/-My%20Professional%20IG_-E4405F?style=flat-square&logo=Instagram&logoColor=white"/></a>
 
-### Ajustes e melhorias
+</p>
+---
+<h2> 👨🏻‍💻 &nbsp;Sobre mim </h2>
 
-🟢 Projeto concluído:
+💜 I'm 🚀 UI/UX Designer & Frontend developer <br/>
+💜 Design de interfaces em Figma<br/>
+💜 Transformando ideias em experiências digitais.<br/>
+💜 Trabalho como freelancer através da plataforma GetNinjas.<br/>
+💜 Estudante de Análise e Desenvolvimento na Ulbra
 
-## 💻 Pré-requisitos
+<h2> 🛠 &nbsp;Stacks e ferramentas</h2>
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+<h3>💻 &nbsp;Front-end:</h3>
 
-- Você precisa para rodar este projeto, apenas de um navegador como o Google Chrome.
+![HTML](https://img.shields.io/badge/-HTML-333333?style=flat&logo=HTML5)
+![CSS](https://img.shields.io/badge/-CSS-333333?style=flat&logo=CSS3&logoColor=1572B6)
+![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
+![TypeScript](https://img.shields.io/badge/-TypeScript-333333?style=flat&logo=typescript&logoColor=2D79C7)
+![React](https://img.shields.io/badge/-React-333333?style=flat&logo=react)
+![React](https://img.shields.io/badge/-React%20Native-333333?style=flat&logo=react)
+![Tailwind](https://img.shields.io/badge/-Tailwind-333333?style=flat&logo=tailwind-css)
 
+<h3>⚙️ &nbsp;Back-end & bancos de dados:</h3>
 
-## 🚀 Instalando Portfolio
+![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js)
+![MongoDB](https://img.shields.io/badge/-MongoDB-333333?style=flat&logo=mongodb)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgresql)
 
-Para instalar o Portfolio, siga estas etapas:
+<h2>🚀 &nbsp;Meu status no GitHub</h2>
 
-Linux e macOS:
-
-```
-git clone https://github.com/TayseRosa/coderosa.tech.git
-```
-
-Windows:
-```
-git clone https://github.com/TayseRosa/coderosa.tech.git
-```
-
-## ☕ Usando Portfolio
-
-Para usar Portfolio, siga estas etapas:
-
-```
-Acessar a pasta coderosa.tech
-Duplo clique em index.html
-Testar no seu navegador favorito
-```
-
-## 📫 Contribuindo para Portfolio
-
-Para contribuir com Portfolio, siga estas etapas:
-
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
-
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+![Tayse Rosa's GitHub Stats](https://github-readme-stats.vercel.app/api?username=tayserosa&show_icons=true&theme=dracula)
 
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/TayseRosa" title="Tayse Code Rosa">
-        <img src="https://avatars.githubusercontent.com/u/31596454?v=4" width=115><br>
-        <sub>
-          <b>Tayse Rosa</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
 
-Copyright :copyright: 2023 · Feito com por ❤️ Tayse Rosa · JS Drums
+🚀 @tayserosa
+🚀 @agenciaorangedigital
